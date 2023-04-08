@@ -6,7 +6,7 @@
 /*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 16:05:02 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/05 19:58:08 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/08 17:09:32 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char	*))
 	int	i;
 
 	i = 0;
+	if (!s || !f)
+		return ;
 	while (s[i])
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
 	}
 }

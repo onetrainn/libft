@@ -6,7 +6,7 @@
 /*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:39:58 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/05 19:58:01 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/08 15:29:51 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(s + i));
 	i++;
 	}
-	return (0);
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }

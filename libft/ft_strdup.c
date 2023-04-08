@@ -6,14 +6,14 @@
 /*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:25:13 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/05 19:58:05 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/08 16:55:24 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*s2;
 	int		i;

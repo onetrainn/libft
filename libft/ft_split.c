@@ -6,7 +6,7 @@
 /*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:09:15 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/07 19:09:18 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/08 17:00:46 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,16 @@ char	**ft_split(char const *s, char c)
 i = 0;
 j = 0;
 words = 0;
+	if (!s)
+		return (NULL);
 s1 = (char **)malloc((words_count(s, c) + 1) * (sizeof(char *)));
-	if (!s1)
+	if (!s1 || !s)
 		return (NULL);
 	while (words < words_count(s, c))
 	{
 		while (s[i] == c)
 		i++;
 		s1[words] = (char *)malloc(let_count(s, c, i) + 1);
-		if (!s1[words])
-			return (NULL);
 		s_create(s1[words], s, c, i);
 		while (s[i] != c && s[i])
 			i++;
