@@ -1,0 +1,2 @@
+# libft
+daje diocane
