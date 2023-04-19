@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:09:15 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/08 17:00:46 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/13 14:43:57 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ char	**ft_split(char const *s, char c)
 	char	**s1;
 	int		words;
 	int		i;
-	int		j;
+	//int		j;
 
 i = 0;
-j = 0;
+//j = 0;
 words = 0;
 	if (!s)
 		return (NULL);

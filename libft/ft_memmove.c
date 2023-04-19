@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:03:17 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/08 16:44:31 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/13 17:21:40 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-	char		*s;
-	char		*s1;
+	char	*d;
+	char	*s;
 
-	if (!dst || !src)
-		return (NULL);
-	i = 0;
-	s = (char *) dst;
-	s1 = (char *)malloc(len);
-	if (!s1)
-		return (NULL);
-	while (i < len)
-	{
-		s1[i] = ((unsigned char *)src)[i];
-		i++;
+	s = (char *)src;
+	d = (char *)dst;
+	if (!dst && !src)
+		return (0);
+	if ( d < s || d >= s + len)
+	{	
+		while (len--)
+			*d++ = *s++;
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		s[i] = s1[i];
-		i++;
+		d = d + len - 1;
+		s = s + len - 1;
+		while (len--)
+			*d-- = *s--;
 	}
-	i++;
-	free (s1);
+	
 	return (dst);
 }

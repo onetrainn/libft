@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:36:19 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/05 19:57:17 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/15 16:55:37 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,61 +14,48 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	n_counter(int n)
+static	size_t	get_count(int n)
 {
-	int	i;
+	size_t	count;
 
-	i = 0;
-	while (n < 0)
+	count = 1;
+	if (n < 0)
 	{
-		i++;
 		n = -n;
+		count++;
 	}
-	while (n > 0)
+	while (n != 0)
 	{
 		n /= 10;
-		i++;
+		count++;
 	}
-	return (i);
-}
-
-char	*ft_s(char	*s, int n, int i, int count)
-{
-	if (n == 0)
-	{
-		s[0] = '0';
-		s[1] = 0;
-		return (s);
-	}
-	while (i >= 0)
-	{
-		s[i] = (n % 10) + 48;
-		i--;
-		n /= 10;
-	}
-	if (count < 0)
-	s[0] = '-';
-	return (s);
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*s;
-	int		i;
-	int		count;
-
-	count = 1;
-	i = n_counter(n);
-	if (n < 0)
-	{
-	count = -1;
-	n = -n;
-	}
-	s = (char *)malloc(i + 1);
-	if (!s)
+	size_t	i;
+	
+	i = get_count(n) - 1;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+		s = (char *)malloc(i + 1);
+		if (!s)
 		return (NULL);
+	if	(n < 0)
+	{
+		s[0] = '-';
+		n = -n;
+	}
 	s[i] = 0;
 	i--;
-	ft_s(s, n, i, count);
+	while(n != 0 && s[i] != '-')
+		{
+		s[i--] = n % 10 + '0';
+		n /= 10;
+		}
 	return (s);
 }

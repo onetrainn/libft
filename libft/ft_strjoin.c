@@ -3,58 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:30:11 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/05 19:58:11 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/14 17:27:02 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strln(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	i++;
-	return (i);
-}
-
-char	*ft_ss(const char *s1, const char *s2, char *s)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i] && s2[j])
-	{
-		while (s1[j])
-		{
-			s[i] = s1[j];
-			i++;
-			j++;
-		}
-		j = 0;
-		while (s2[j])
-		{
-			s[i] = s2[j];
-			i++;
-			j++;
-		}
-	}
-	return (s);
-}
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t len;
 	char	*s;
-
-	s = (char *)malloc(sizeof(char) *(ft_strln(s2) + ft_strln(s1) + 1));
+	
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);;
+	s = (char *)malloc(len + 1);
 	if (!s)
 		return (NULL);
-	ft_ss(s1, s2, s);
+	ft_strlcpy(s, s1, ft_strlen(s1) + 1);
+	ft_strlcat(s, s2, len + 1);
 	return (s);
 }
