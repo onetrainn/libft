@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:39:35 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/04/16 17:26:05 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/04/24 15:11:26 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:06:00 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/14 17:07:39 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/04/19 16:32:46 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {	
 	char	*s1;
 	size_t	i;
-	
+
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))

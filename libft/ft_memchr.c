@@ -6,12 +6,10 @@
 /*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:20:05 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/07 18:23:03 by lgrossi          ###   ########.fr       */
+/*   Updated: 2023/04/24 15:53:47 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

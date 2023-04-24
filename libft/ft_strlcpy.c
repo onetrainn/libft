@@ -6,7 +6,7 @@
 /*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:21:19 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/19 15:43:54 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/04/13 17:53:19 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	dst[i] = '\0';
 	return ((size_t)ft_strlen(src));
-
 }

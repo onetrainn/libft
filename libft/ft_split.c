@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:09:15 by lgrossi           #+#    #+#             */
-/*   Updated: 2023/04/13 14:43:57 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/04/19 17:18:29 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int	words_count(char const *s, char c)
+static int	words_count(char const *s, char c)
 {
 	int	i;
 	int	words;
@@ -32,7 +32,7 @@ int	words_count(char const *s, char c)
 	return (words);
 }
 
-int	let_count(char const *s, char c, int i)
+static int	let_count(char const *s, char c, int i)
 {
 	int	letters;
 
@@ -45,7 +45,7 @@ int	let_count(char const *s, char c, int i)
 	return (letters);
 }
 
-void	s_create(char *s1, char const *s, char c, int i)
+static void	s_create(char *s1, char const *s, char c, int i)
 {
 	int	j;
 
@@ -64,14 +64,12 @@ char	**ft_split(char const *s, char c)
 	char	**s1;
 	int		words;
 	int		i;
-	//int		j;
 
-i = 0;
-//j = 0;
-words = 0;
+	i = 0;
+	words = 0;
 	if (!s)
 		return (NULL);
-s1 = (char **)malloc((words_count(s, c) + 1) * (sizeof(char *)));
+	s1 = (char **)malloc((words_count(s, c) + 1) * (sizeof(char *)));
 	if (!s1 || !s)
 		return (NULL);
 	while (words < words_count(s, c))
@@ -84,6 +82,6 @@ s1 = (char **)malloc((words_count(s, c) + 1) * (sizeof(char *)));
 			i++;
 		words++;
 	}
-s1[words] = 0;
+	s1[words] = 0;
 	return (s1);
 }
