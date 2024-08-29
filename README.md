@@ -1,4 +1,5 @@
-# Libft Introduction
+# Libft
+### A brief Introduction
 
 `libft` (Library of Functions) is the first project completed at 42 School. It is a collection of various functions, primarily for string manipulation and memory allocation, that students need to implement. 
 This library also constitutes the only list of allowed functions for all subsequent projects during the course. The file structure for this project is the following:
