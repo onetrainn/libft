@@ -1,5 +1,5 @@
 # Libft
-### A brief Introduction
+## A brief Introduction
 
 `libft` (Library of Functions) is the first project completed at 42 School. It is a collection of various functions, primarily for string manipulation and memory allocation, that students need to implement. 
 This library also constitutes the only list of allowed functions for all subsequent projects during the course.
@@ -16,7 +16,7 @@ Your header file is useful for 2 things:
 Makefile is where you will create a file to compile your projects. Remember how in the piscine, you created an **int main** and **gcc** to compile the projects, well with a Makefile, you don't have to do that anymore, you just type `make` once you have created your Makefile. 
 
 
-# Libft Functions
+## Libft Functions
 
 ### Functions from `<ctype.h>`
 
